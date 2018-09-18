@@ -30,6 +30,7 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
+    console.log(request.body)
     queries.update(request.params.id, request.body).then(resolution => {
         response.json({resolution: resolution[0]});
     }).catch(next);
